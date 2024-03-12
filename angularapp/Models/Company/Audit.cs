@@ -4,6 +4,9 @@ class Program
 {
   static void Main()
   {
-    callNotes obj = new callNotes();
+    
+    public int CallMinutes = { get; set; }
+    public string CallNotes = { get; set; }
+
   }
 }
