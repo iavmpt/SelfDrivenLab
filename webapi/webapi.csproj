@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,7 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DbContext.cs" />
+    <Compile Remove="Models\Company\Audit.cs" />
+    <Compile Remove="Models\Customer\CustomerInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="webapi.http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="DbContext.cs" />
+    <None Include="Models\Company\Audit.cs" />
+    <None Include="Models\Customer\CustomerInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
